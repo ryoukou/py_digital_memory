@@ -31,7 +31,7 @@ def test_mapping(count):
 
         # Prompt user to recall the mapping
         start_time = time.time()
-        guess = int(input(f"What is the number for {oo}? "))
+        guess = int(input(f"{i}/{count}：What is the number for {oo}? "))
         end_time = time.time()
 
         # Calculate the time taken to guess and record it
@@ -41,8 +41,11 @@ def test_mapping(count):
 
         # Check if the guess is correct and record it
         if guess == int(mapping[oo]):
+            print("You are right!")
             correct_count += 1
             oo_correct_count += 1
+        else:
+            print("You are wrong! correct is：{}".format(mapping[oo]))
 
         oo_times.append(time_taken)
 
